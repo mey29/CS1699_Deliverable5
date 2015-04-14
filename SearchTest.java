@@ -6,6 +6,7 @@
  * Scenarios: 
  *
  * Given the Nordstrom's home page, when I enter a product's code number in the search bar and press enter, then the product will appear. 
+ * Given the Nordstrom's home page, when I enter a product's name in the search bar and press enter, then the product will appear.
  * Given the Nordstrom's home page, when I click through the correct departments, then the correct title will be displayed.
  * Given the Google home page, when I click the search bar and enter a specific product and the word "Nordstrom" and press enter, then a link to the product's page on Nordstrom's shows up in the results.
  */
@@ -28,7 +29,7 @@ public class SearchTest {
 	// Given the Nordstrom's home page, when I enter a product's code number in
 	// the search bar and press enter, then the product will appear.
 	@Test
-	public void testSearchBar() {
+	public void testSearchBarCode() {
 		try {
 			setUp();
 		} catch (Exception e) {
@@ -45,6 +46,28 @@ public class SearchTest {
 		WebElement element = driver.findElement(By.id("product-title"));
 		assertEquals(element.getText(),
 				"'Broken Photo' Floral Print Peasant Blouse");
+		driver.quit();
+	}
+	
+
+	// Given the Nordstrom's home page, when I enter a product's name in
+	// the search bar and press enter, then the product will appear.
+	@Test
+	public void testSearchBarName() {
+		try {
+			setUp();
+		} catch (Exception e) {
+			fail();
+		}
+
+		// Click on search bar and present product code
+		driver.findElement(By.id("primary-search-input")).sendKeys("'Broken Photo' Floral Print Peasant Blouse");
+
+		// Click submit button
+		driver.findElement(By.id("primary-search-submit")).click();
+
+		// Assertion that items were found
+		assertNotNull(driver.findElement(By.id("fashion_3942742")));
 		driver.quit();
 	}
 

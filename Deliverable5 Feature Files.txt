@@ -41,6 +41,12 @@ Then the product will appear.
 
 Scenario:
 Given the Nordstrom's home page
+When I enter a product's name in the search bar
+And I press enter
+Then the product will appear.
+
+Scenario:
+Given the Nordstrom's home page
 When I click through the correct departments
 And I search within that department
 the correct title will be displayed.
