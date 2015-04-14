@@ -1,0 +1,155 @@
+Deliverable 5: Nordstrom’s Web Testing
+Feature Files
+
+Feature: Shopper 
+As a shopper of Nordstrom's I want to manage my cart so that I choose the correct purchases.
+
+Scenario:
+Given a products page on Nordstrom’s
+When I click "Add to Shopping Bag”
+Then the item shows up in my Shopping Bag.
+
+Scenario:
+Given my Shopping Bag on Nordstrom’s
+when I click "Delete" on an item
+Then that item is no longer in my Shopping Bag.
+
+Scenario:
+Given my Shopping Bag on Nordstrom’s
+When I change the size on an item
+Then my Shopping Bag is updated with the revised size.
+
+Scenario:
+Given the Nordstrom's home page
+When I click Shopping Bag
+Then the contents of Shopping Bag are displayed.
+
+Scenario:
+Given my Shopping Bag on Nordstrom's
+When I click "Save for later"
+Then my Shopping Bag is updated with the product removed and saved.
+
+
+Feature: Search
+As a searcher of Nordstrom's I want to find products so that I can purchase them.
+
+Scenario:
+Given the Nordstrom's home page
+When I enter a product's code number in the search bar
+And I press enter
+Then the product will appear.
+
+Scenario:
+Given the Nordstrom's home page
+When I click through the correct departments
+And I search within that department
+the correct title will be displayed.
+
+Scenario:
+Given the Google home page
+When I click the search bar
+And I enter a specific product
+And enter the word “Nordstrom”
+And I press enter
+Then a link to the product's page on Nordstrom's shows up in the results
+And I can click on that link to view the product page.
+
+
+Feature: Sign In
+As a user of Nordstrom’s I want to be able to sign in so that I can make purchases.
+
+Scenario:
+Given the Nordstrom’s sign-in page
+When I enter the correct username
+And I enter the correct password
+Then I am signed into my account.
+
+Scenario:
+Given the Nordstrom’s sign-in page
+When I enter the incorrect username
+And I enter the incorrect password
+Then I am not signed into my account
+And I receive an error message.
+
+Scenario:
+Given the Nordstrom’s sign-in page
+When I enter the incorrect username
+And I enter the correct password
+Then I am not signed into my account
+And I receive an error message.
+
+Scenario:
+Given the Nordstrom’s sign-in page
+When I enter the correct username
+And I enter the incorrect password
+Then I am not signed into my account
+And I receive an error message.
+
+
+Feature: Wish List
+As a user of Nordstrom's I want to manage my wish lists so that I can store future potential purchases. 
+
+Scenario:
+Given a signed in Nordstrom's account Wish List page
+When first loaded
+Then then a statement "Hello Software! There are no items in your Wish List" appears.
+
+Scenario:
+Given a signed in Nordstrom's account Wish List page
+When I search #1036625
+And select "X-Small" followed by clicking "Add to Wish List"
+Then a pop up will appear that will state "Added to Wish List:".
+
+Scenario:
+Given a signed in Nordstrom's account Wish List page
+When I click "Remove"
+Then the item is no longer found in the wish list.
+
+Scenario:
+Given a signed in Nordstrom's account Wish List page
+When I click "make it public" 
+And enter password
+Then all items on wish list are publicly displayed.
+
+
+Feature: Manage Account 
+As a user of Nordstrom's I want to manage my account so that I can have up-to-date information and I am aware of account balances.
+
+Scenario:
+Given a signed in Nordstrom's account page
+When the page loads
+Then a welcomed display is visible. 
+
+Scenario:
+Given a signed in Nordstrom's account page
+When I click "Addresses & Phone Numbers"
+Then my new address can be added.
+
+Scenario:
+Given a signed in Nordstrom's account page
+When I click "Order History”
+Then I see a list of order archives.
+
+Scenario:
+Given a signed in Nordstrom's account page
+When I click "Communication Preferences"
+And I click “Sign up to receive e-mail Updates"
+Then a new e-mail may be added into a pop-up window.
+
+Scenario:
+Given a signed in Nordstrom’s account page
+When I click "Payment Methods" 
+And I click "Add New Payment Method"
+And enter my password
+Then I can add a new payment method.
+
+Scenario:
+Given a signed in Nordstrom’s account page
+When I click "Sign-In Information"
+And I click “Edit”
+Then I can edit my name.
+
+Scenario:
+Given a signed in Nordstrom’s account page
+When I click “Rewards Information"
+Then I am able to apply for them.
